@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 PROJECT(boost_socket_io)
 
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-pthread")    
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-pthread -std=c++11")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-pthread")    
 
 #Set output folder
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
