@@ -21,7 +21,7 @@
 #include <iostream>
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
-#include "thread_wrapper.h"
+#include "wrapper/thread_wrapper.h"
 #include <string>
 
 using namespace std;
