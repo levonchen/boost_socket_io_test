@@ -18,13 +18,17 @@
 
 
 
-#include<iostream>
-#include<boost/bind.hpp>
-#include<boost/asio.hpp>
+#include <iostream>
+#include <boost/bind.hpp>
+#include <boost/asio.hpp>
+#include "thread_wrapper.h"
+#include <string>
 
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
+
+using namespace socketio_wrapper;
 
 int fun(int x,int y){return x+y;}
 
@@ -54,6 +58,26 @@ void asio_test()
 
 int main(){
    
-   asio_test();
+   //asio_test();
+   
+   thread_wrapper rapper;
+   
+   rapper.Run();
+   
+   while(true)
+   {
+	   std::cout<<"Input msg to send, [exit] stop application"<<std::endl;
+	   
+	   std::string msg;
+	   std::cin>>msg;
+	   
+	   if(msg.compare(exit) == 0)
+	   {
+		   rapper.Stop();
+		   break;
+	   }
+	   
+	   rapper.SendMsg(msg);
+   }
     return 0;
 }
