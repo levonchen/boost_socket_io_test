@@ -1,7 +1,7 @@
 #ifndef SOCKET_WRAPPER_H
 #define SOCKET_WRAPPER_H
 
-#include <boost\asio\io_service.hpp>
+
 #include <boost\bind.hpp>
 #include <boost\asio.hpp>
 #include <string>
