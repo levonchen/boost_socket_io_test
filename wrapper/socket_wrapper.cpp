@@ -27,7 +27,7 @@ void socket_wrapper::onTick()
 	std::cout<<"onTick"<<std::endl;
 	
 	timer_.expires_at(timer_.expires_at() + interval);
-	timer_.async_wait(boost:bind(&socket_wrapper::onTick(),this));
+	timer_.async_wait(boost::bind(&socket_wrapper::onTick,this));
 }
 
 void socket_wrapper::Run()
@@ -47,5 +47,5 @@ void socket_wrapper::Run()
 
 void socket_wrapper::SendMsg(const std::string& msg)
 {
-	std::count<<"Send to server:" << msg<< std::endl;
+	std::cout<<"Send to server:" << msg<< std::endl;
 }
