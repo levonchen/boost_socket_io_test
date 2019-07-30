@@ -44,7 +44,7 @@ void handler(const boost::system::error_code &ec)
 void asio_test()
 {
 	boost::asio::io_service io_service;
-	boost::asio::deadline_timer time(io_service,boost::posic_time::seconds(1));
+	boost::asio::deadline_timer time(io_service,boost::posix_time::seconds(1));
 	
 	time.async_wait(handler);
 	
