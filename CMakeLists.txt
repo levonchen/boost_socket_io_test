@@ -15,8 +15,7 @@ set(Boost_USE_MULTITHREADED ON)
 find_package(Boost
              1.70.0
              COMPONENTS thread
-                        atomic					
-                        bind
+                        atomic                        
 						ref
 						shared_ptr
 						function
