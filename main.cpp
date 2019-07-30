@@ -54,5 +54,6 @@ void asio_test()
 
 int main(){
    
+   asio_test();
     return 0;
 }
