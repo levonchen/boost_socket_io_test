@@ -29,7 +29,7 @@ namespace socketio_wrapper
 			
 			boost::shared_ptr<std::thread> m_thread;
 			boost::shared_ptr<socket_wrapper> m_socket_wrapper;
-	}
+	};
 }
 
 

@@ -34,10 +34,10 @@ namespace socketio_wrapper
 		
 			bool running;
 		
-			boost::asio:io_service io;
+			boost::asio::io_service io;
 			boost::asio::deadline_timer timer_;
 		
-	}
+	};
 }
 
 #endif

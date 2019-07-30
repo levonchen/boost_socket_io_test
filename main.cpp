@@ -60,9 +60,9 @@ int main(){
    
    //asio_test();
    
-   thread_wrapper rapper;
+   thread_wrapper wrapper;
    
-   rapper.Run();
+   wrapper.Run();
    
    while(true)
    {
@@ -71,13 +71,13 @@ int main(){
 	   std::string msg;
 	   std::cin>>msg;
 	   
-	   if(msg.compare(exit) == 0)
+	   if(msg.compare("exit") == 0)
 	   {
-		   rapper.Stop();
+		   wrapper.Stop();
 		   break;
 	   }
 	   
-	   rapper.SendMsg(msg);
+	   wrapper.SendMsg(msg);
    }
     return 0;
 }
