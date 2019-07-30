@@ -15,9 +15,7 @@ set(Boost_USE_MULTITHREADED ON)
 find_package(Boost
              1.70.0
              COMPONENTS thread
-                        atomic 						
-						shared_ptr
-						function
+                        atomic						
                         system
 						filesystem
 						program_options                        
