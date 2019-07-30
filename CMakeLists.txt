@@ -26,6 +26,8 @@ include_directories(
 ${Boost_INCLUDE_DIRS}
 )
 
+add_subdirectory(wrapper)
+
 message("${Boost_INCLUDE_DIRS}")
 message("${Boost_LIBRARIES}")
 
@@ -34,4 +36,4 @@ message("${Boost_LIBRARIES}")
 aux_source_directory(. DIR_SRCS)
 
 add_executable(demo ${DIR_SRCS})
-target_link_libraries(demo ${Boost_LIBRARIES})
+target_link_libraries(demo ${Boost_LIBRARIES} wrapper)
