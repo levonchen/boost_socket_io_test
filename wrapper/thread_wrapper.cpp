@@ -19,7 +19,7 @@ thread_wrapper::~thread_wrapper()
 void thread_wrapper::Run()
 {
 	m_socket_wrapper.reset(new socket_wrapper());
-	m_thread.reset(new std::thread(&socket_wrapper::Run,m_socket_wrapper);
+	m_thread.reset(new std::thread(&socket_wrapper::Run,m_socket_wrapper));
 }
 void thread_wrapper::Stop()
 {
