@@ -72,15 +72,18 @@ void socket_wrapper::Run()
 
 void socket_wrapper::SendMsg(const std::string& msg)
 {
-	std::cout<<"Send to server:" << msg<< std::endl;
+	
 	
 	if(m_sioConnected){
 		m_sioClient.socket()->emit("SkeletonResult",msg);
+		
+		std::cout<<"Send to server:" << msg<< std::endl;
 	}
 }
 
 void socket_wrapper::on_socket_connected()
 {
+	std::cout<<"on_socket_connected" << std::endl;
 	m_sioConnected = true;
 	
 	setupOnReturn();
