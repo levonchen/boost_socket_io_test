@@ -13,7 +13,7 @@ set(DBOOST_ROOT "/usr/local/boost/")
 set(DBOOST_LIBRARYDIR "/usr/local/boost/lib/")
 
 set(SIO_CLIENT_INCLUDE_DIRS "/root/socket_cpp/socket.io-client-cpp/build/include")
-set(SIO_CLIENT_LIBRARIES "/root/socket_cpp/socket.io-client-cpp/build/lib")
+set(SIO_CLIENT_LIBRARIES "/root/socket_cpp/socket.io-client-cpp/build/lib/Release")
 
 
 set(Boost_USE_STATIC_LIBS   ON)
@@ -39,7 +39,9 @@ message("${Boost_LIBRARIES}")
 message(${SIO_CLIENT_INCLUDE_DIRS})
 message(${SIO_CLIENT_LIBRARIES})
 
-
+link_directories(
+${SIO_CLIENT_LIBRARIES}
+)
 
 aux_source_directory(. DIR_SRCS)
 
@@ -47,3 +49,5 @@ aux_source_directory(${CMAKE_CURRENT_LIST_DIR}/wrapper DIR_SRCS)
 
 add_executable(demo ${DIR_SRCS})
 target_link_libraries(demo ${Boost_LIBRARIES})
+target_link_libraries(demo sioclient)
+
