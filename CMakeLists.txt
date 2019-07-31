@@ -14,7 +14,7 @@ set(Boost_USE_STATIC_LIBS   ON)
 set(Boost_USE_MULTITHREADED ON)
 
 find_package(Boost
-             1.70.0
+             1.56.0
              COMPONENTS thread
                         atomic						
                         system
