@@ -41,7 +41,7 @@ void socket_wrapper::setupOnReturn()
 		std::cout<<"On Return From Server: "<< name <<std::endl;
 		
 		
-	});
+	}));
 }
 
 void socket_wrapper::onTick()
