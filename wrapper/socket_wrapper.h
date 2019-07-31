@@ -6,6 +6,8 @@
 #include <boost/asio.hpp>
 #include <string>
 
+#include <sio_client.h>
+
 
 namespace socketio_wrapper
 {
@@ -29,6 +31,15 @@ namespace socketio_wrapper
 			
 		private:
 			void onTick();
+			
+			void setupSocketClient();
+			void setupOnReturn();
+			
+			void on_socket_connected();
+			void on_socket_close(client::close_reason const& reson);
+			void on_socket_fail();
+			
+			
 		
 		private:
 		
@@ -36,6 +47,9 @@ namespace socketio_wrapper
 		
 			boost::asio::io_service io;
 			boost::asio::deadline_timer timer_;
+			
+			sio::client m_sioClient;
+			bool		m_sioConnected;
 		
 	};
 }
