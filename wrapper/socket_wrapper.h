@@ -8,6 +8,7 @@
 
 #include <sio_client.h>
 
+using namespace sio;
 
 namespace socketio_wrapper
 {
