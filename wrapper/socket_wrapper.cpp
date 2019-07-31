@@ -1,5 +1,7 @@
 #include "socket_wrapper.h"
-#include<iostream>
+#include <iostream>
+
+#include <sio_client.h>
 using namespace socketio_wrapper;
 using namespace std;
 
