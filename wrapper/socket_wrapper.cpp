@@ -36,9 +36,9 @@ void socket_wrapper::setupSocketClient()
 
 void socket_wrapper::setupOnReturn()
 {
-	m_sioClient.socket()->on("SkeletonResult",sio::socket::event_listener_aux([&](string const&msg){
+	m_sioClient.socket()->on("SkeletonResult",sio::socket::event_listener_aux([&](string const& name, message::ptr const& data, bool isAck,message::list &ack_resp){
 		
-		std::cout<<"On Return From Server: "<< msg <<std::endl;
+		std::cout<<"On Return From Server: "<< name <<std::endl;
 		
 		
 	});
