@@ -32,9 +32,9 @@ include_directories(
 ${Boost_INCLUDE_DIRS}
 ${SIO_CLIENT_INCLUDE_DIRS}
 ${CMAKE_CURRENT_LIST_DIR}/rapidjson
-${CMAKE_CURRENT_LIST_DIR}/rapidjson/error
-${CMAKE_CURRENT_LIST_DIR}/rapidjson/internal
-${CMAKE_CURRENT_LIST_DIR}/rapidjson/msinttypes
+#${CMAKE_CURRENT_LIST_DIR}/rapidjson/error
+#${CMAKE_CURRENT_LIST_DIR}/rapidjson/internal
+#${CMAKE_CURRENT_LIST_DIR}/rapidjson/msinttypes
 )
 
 message("${Boost_INCLUDE_DIRS}")
