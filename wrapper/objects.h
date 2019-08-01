@@ -49,7 +49,7 @@ namespace socketio_wrapper
 							writer.EndArray();
 						}
 				
-				write.EndArray();
+				writer.EndArray();
 				
 				writer.EndObject();
 				
