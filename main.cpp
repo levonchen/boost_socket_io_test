@@ -16,7 +16,7 @@
 	// return 0;
 // }
 
-
+#define RAPIDJSON_HAS_STDSTRING
 
 #include <iostream>
 #include <boost/bind.hpp>
@@ -31,6 +31,7 @@
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
+
 
 using namespace socketio_wrapper;
 using namespace rapidjson;
