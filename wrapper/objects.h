@@ -46,7 +46,7 @@ namespace socketio_wrapper
 									{
 										writer.Int(*itSub);
 									}
-							writer.StartArray();
+							writer.EndArray();
 						}
 				
 				write.EndArray();
