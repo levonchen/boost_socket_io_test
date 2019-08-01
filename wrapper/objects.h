@@ -44,7 +44,7 @@ namespace socketio_wrapper
 									itSub != par.end();
 									++itSub)
 									{
-										writer.int(*itSub);
+										writer.Int(*itSub);
 									}
 							writer.StartArray();
 						}
