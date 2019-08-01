@@ -24,11 +24,34 @@ namespace socketio_wrapper
 			template<typename Writer>
 			void Serialize(Writer& writer) const{
 				
+				writer.StartObject();
+				
 				writer.String("count");
 				writer.Uint(count);
 
 				writer.String("msg");
 				writer.String(msg);
+				
+				writer.String("datas");
+				writer.StartArray();
+					for(std::vector< std::vector<int> >::const_iterator it = datas.begin();
+						it != datas.end();
+						++it)
+						{
+							std::vector<int> par = *it;
+							writer.StartArray();
+								for(std::vector<int>::const_iterator itSub = par.begin();
+									itSub != par.end();
+									++itSub)
+									{
+										writer.int(*itSub);
+									}
+							writer.StartArray();
+						}
+				
+				write.EndArray();
+				
+				writer.EndObject();
 				
 			}
 	};

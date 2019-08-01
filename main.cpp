@@ -24,6 +24,7 @@
 #include "wrapper/thread_wrapper.h"
 #include "wrapper/objects.h"
 #include <string>
+#include <random>
 
 #include "rapidjson/prettywriter.h" 
 #include "rapidjson/stringbuffer.h"
@@ -35,6 +36,8 @@ using namespace boost::asio;
 
 using namespace socketio_wrapper;
 using namespace rapidjson;
+
+using std::default_random_engine;
 
 int fun(int x,int y){return x+y;}
 
@@ -65,6 +68,7 @@ void asio_test()
 int main(){
    
    //asio_test();
+   default_random_engine e;
    
    thread_wrapper wrapper;
    
@@ -88,14 +92,23 @@ int main(){
 	   params.count = count++;
 	   params.msg = msg;
 	   
+	   for(int x = 0; x<100;x++)
+	   {
+		   std::vector<int> var;
+		   var.push_back(e());
+		   var.push_back(e());
+		   
+		   params.datas.push_back(var);
+	   }
+	   
 	   StringBuffer sb;
 	   PrettyWriter<StringBuffer> writer(sb);
 	   
-	   writer.StartObject();
+	   //writer.StartObject();
 	
 	   params.Serialize(writer);
 	   
-	   writer.EndObject();
+	   //writer.EndObject();
 	   
 	   std::string output = sb.GetString();
 	   
