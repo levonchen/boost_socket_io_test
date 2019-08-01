@@ -31,7 +31,7 @@ namespace socketio_wrapper
 				writer.String(msg);
 				
 			}
-	}
+	};
 }
 
 #endif
