@@ -3,7 +3,7 @@
 #define SOCKET_OBJECTS_H
 
 #include <string>
-#include <array>
+#include <vector>
 
 #include "../rapidjson/prettywriter.h"
 
@@ -17,7 +17,7 @@ namespace socketio_wrapper
 		public:
 			int count;
 			std::string msg;
-			std::array< std::array<int> > datas;
+			std::vector< std::vector<int> > datas;
 			
 		public:
 		
