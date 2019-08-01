@@ -90,8 +90,12 @@ int main(){
 	   
 	   StringBuffer sb;
 	   PrettyWriter<StringBuffer> writer(sb);
+	   
+	   writer.StartObject();
 	
 	   params.Serialize(writer);
+	   
+	   writer.EndObject();
 	   
 	   std::string output = sb.GetString();
 	   
