@@ -22,7 +22,10 @@
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
 #include "wrapper/thread_wrapper.h"
+#include "wrapper/objects.h"
 #include <string>
+
+#include "rapidjson/prettywriter.h" 
 
 using namespace std;
 using namespace boost;
@@ -64,6 +67,7 @@ int main(){
    
    wrapper.Run();
    
+   int count = 1;
    while(true)
    {
 	   std::cout<<"Input msg to send, [exit] stop application"<<std::endl;
@@ -77,7 +81,18 @@ int main(){
 		   break;
 	   }
 	   
-	   wrapper.SendMsg(msg);
+	   CParams params;
+	   params.count = count++;
+	   params.msg = msg;
+	   
+	   StringBuffer sb;
+	   PrettyWriter<StringBuffer> writer(sb);
+	
+	   params.Serialize(writer);
+	   
+	   std::string output = sb.GetString();
+	   
+	   wrapper.SendMsg(output);
    }
     return 0;
 }
