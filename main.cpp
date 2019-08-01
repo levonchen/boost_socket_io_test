@@ -16,7 +16,7 @@
 	// return 0;
 // }
 
-#define RAPIDJSON_HAS_STDSTRING
+#define RAPIDJSON_HAS_STDSTRING 1
 
 #include <iostream>
 #include <boost/bind.hpp>
