@@ -5,7 +5,7 @@
 using namespace socketio_wrapper;
 using namespace std;
 
-static const boost::posix_time::seconds interval(5);
+static const boost::posix_time::seconds interval(10);
 
 socket_wrapper::socket_wrapper()
 	:timer_(io,interval),
@@ -38,7 +38,8 @@ void socket_wrapper::setupOnReturn()
 {
 	m_sioClient.socket()->on("logs",sio::socket::event_listener_aux([&](string const& name, message::ptr const& data, bool isAck,message::list &ack_resp){
 		
-		std::cout<<"On Return From Server: "<< name <<std::endl;
+		std::cout<<"On Return From Server: cmd: "<< name <<  "  msg:"<< data.get_string()<<std::endl;
+		
 		
 		
 	}));
