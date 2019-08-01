@@ -26,12 +26,14 @@
 #include <string>
 
 #include "rapidjson/prettywriter.h" 
+#include "rapidjson/stringbuffer.h"
 
 using namespace std;
 using namespace boost;
 using namespace boost::asio;
 
 using namespace socketio_wrapper;
+using namespace rapidjson;
 
 int fun(int x,int y){return x+y;}
 
