@@ -31,7 +31,7 @@ void socket_wrapper::setupSocketClient()
     m_sioClient.set_close_listener(std::bind(&socket_wrapper::on_socket_close, this,std::placeholders::_1));
     m_sioClient.set_fail_listener(std::bind(&socket_wrapper::on_socket_fail, this));
 	
-	m_sioClient.connect("http://192.169.1.100:9000");
+	m_sioClient.connect("http://192.168.10.157:9000");
 }
 
 void socket_wrapper::setupOnReturn()
